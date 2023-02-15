@@ -1,0 +1,42 @@
+.nav {
+  font-size: 1.6rem;
+  font-family: 'Raleway', sans-serif;
+  animation: fadeIn .7s;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav__menu {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  border-left: solid 1px gray;
+  margin-left: 1rem;
+}
+
+.nav__item {
+  padding: .7rem;
+  margin: 1rem;
+  letter-spacing: 2px;
+}
+
+.nav__item:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

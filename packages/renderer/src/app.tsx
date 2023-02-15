@@ -1,9 +1,15 @@
 import React from "react"
 import "./app.css"
+import Writer from "./components/Writer/Writer"
+import Header from "./components/Header/header"
 
 const App:React.FC = () => {
   return (
-    <h1>This is the app!</h1>
+    <div className="theme-fantasy">
+      <Header />
+      <Writer />
+    </div>
+
   )
 }
 
