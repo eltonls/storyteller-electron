@@ -1,18 +1,17 @@
 import React from "react"
-import Styles from "./nav.module.css"
 
 const Nav: React.FC = () => {
   return (
-    <nav className={Styles["nav"]}>
-      <button className="btn btn--primary">Escrever!</button>
-      <ul className={Styles["nav__menu"]}>
-        <li className={Styles["nav__item"]}>
+    <nav className="flex flex-row items-center">
+      <button className="h-fit bg-purple-700 p-2 rounded">Escrever!</button>
+      <ul className="border-purple-400 m-2 border-l-2 flex flex-row items-center">
+        <li className="m-2">
           Enredo
         </li>
-        <li className={Styles["nav__item"]}>
+        <li className="m-2">
           Personagens
         </li>
-        <li className={Styles["nav__item"]}>
+        <li className="m-2">
           Notas
         </li>
       </ul>
