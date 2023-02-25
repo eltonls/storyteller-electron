@@ -1,22 +1,24 @@
 import React from "react"
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Header from "./components/Header/header"
-import Writer from "./components/Writer/writer"
-import Character from "./components/Writer/character"
-import SectionList from "./components/Writer/sectionList"
+import Home from "./pages/Home"
+import Plot from "./pages/Plot"
+import Notes from "./pages/Notes"
+import Characters from "./pages/Characters"
 
 const App: React.FC = () => {
-  function changeCharacterHandler(characterName:string) {
-
-  }
-
   return (
-    <div className="font-sans w-screen h-screen overflow-hidden">
-      <Header />
-      <div className="p-2 flex flex-row w-full h-96">
-        <SectionList changeCharacter={changeCharacterHandler} />
-        <Character characterName="Gandalf" />
+    <Router>
+      <div className="font-sans w-screen h-screen overflow-hidden">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/plot" element={<Plot />}></Route>
+          <Route path="/characters" element={<Characters />}></Route>
+          <Route path="/notes" element={<Notes />}></Route>
+        </Routes>
       </div>
-    </div>
+    </Router>
   )
 }
 
