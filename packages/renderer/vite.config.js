@@ -1,12 +1,12 @@
 /* eslint-env node */
 
-import {chrome} from '../../.electron-vendors.cache.json';
-import {renderer} from 'unplugin-auto-expose';
-import {join} from 'node:path';
-import {injectAppVersion} from '../../version/inject-app-version-plugin.mjs';
+import { chrome } from "../../.electron-vendors.cache.json"
+import { renderer } from "unplugin-auto-expose"
+import { join } from "node:path"
+import { injectAppVersion } from "../../version/inject-app-version-plugin.mjs"
 
-const PACKAGE_ROOT = __dirname;
-const PROJECT_ROOT = join(PACKAGE_ROOT, '../..');
+const PACKAGE_ROOT = __dirname
+const PROJECT_ROOT = join(PACKAGE_ROOT, "../..")
 
 /**
  * @type {import('vite').UserConfig}
@@ -18,35 +18,35 @@ const config = {
   envDir: PROJECT_ROOT,
   resolve: {
     alias: {
-      '/@/': join(PACKAGE_ROOT, 'src') + '/',
-    },
+      "/@/": join(PACKAGE_ROOT, "src") + "/"
+    }
   },
-  base: '',
+  base: "",
   server: {
     fs: {
-      strict: true,
-    },
+      strict: true
+    }
   },
   build: {
     sourcemap: true,
     target: `chrome${chrome}`,
-    outDir: 'dist',
-    assetsDir: '.',
+    outDir: "dist",
+    assetsDir: ".",
     rollupOptions: {
-      input: join(PACKAGE_ROOT, 'index.html'),
+      input: join(PACKAGE_ROOT, "index.html")
     },
     emptyOutDir: true,
-    reportCompressedSize: false,
+    reportCompressedSize: false
   },
   test: {
-    environment: 'happy-dom',
+    environment: "happy-dom"
   },
   plugins: [
     renderer.vite({
-      preloadEntry: join(PACKAGE_ROOT, '../preload/src/index.ts'),
+      preloadEntry: join(PACKAGE_ROOT, "../preload/src/index.ts")
     }),
-    injectAppVersion(),
-  ],
-};
+    injectAppVersion()
+  ]
+}
 
-export default config;
+export default config
